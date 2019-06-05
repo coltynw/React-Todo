@@ -3,7 +3,9 @@ import React from 'react';
 class App extends React.Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      
+    };
   }
   // you will need a place to store your state in this component.
   // design `App` to be the parent component of your application.
