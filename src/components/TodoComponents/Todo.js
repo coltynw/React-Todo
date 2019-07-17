@@ -1,9 +1,10 @@
 import React from 'react';
 
-function Todo() {
+
+function Todo(props) {
   return(
     <div>
-      <h4>{this.state.todo}</h4>
+      <h2>{props.name}</h2>
     </div>
   )
 }

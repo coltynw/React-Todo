@@ -1,11 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-function TodoList() {
+function TodoForm(props) {
+  const [formValue, setFormValue] = useState('');
+  
+  const sendTask = (e) => {
+    e.preventDefault();
+    props.addTask(formValue);
+    setFormValue('');
+  }
+
   return (
-    <form>
-      <input placeholder='Item to DO' value={this.state.list.item} />
+    <form onSubmit={sendTask}>
+      <input placeholder='Item to DO' value={formValue} onChange={(e) => setFormValue(e.target.value)} />
     </form>
   )
 }
 
-export default TodoList;
+export default TodoForm;
