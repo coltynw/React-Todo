@@ -9,9 +9,16 @@ function TodoForm(props) {
     setFormValue('');
   }
 
+  const removeEvent = (e) => {
+    e.preventDefault();
+    props.removeTask();
+  }
+
   return (
     <form onSubmit={sendTask}>
       <input placeholder='Item to DO' value={formValue} onChange={(e) => setFormValue(e.target.value)} />
+      <button type='submit'>Add Todo</button>
+      <button type='button' onClick={removeEvent}>Remove Todo</button>
     </form>
   )
 }

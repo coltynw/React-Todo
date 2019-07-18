@@ -8,6 +8,9 @@ function TodoList(props) {
         <Todo 
           key = {element.id}
           name = {element.name}
+          complete = {element.complete}
+          id = {element.id}
+          changeComplete= {props.changeComplete}
         />
       ))}
     </div>

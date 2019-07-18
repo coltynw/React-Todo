@@ -3,6 +3,7 @@ import TodoForm from './components/TodoComponents/TodoForm';
 import TodoList from './components/TodoComponents/TodoList';
 
 
+
 // class App extends React.Component {
 //   constructor() {
 //     super();
@@ -29,16 +30,34 @@ function App() {
     const newTask = {
       name: todoName,
       id: Date.now(),
-      copmlete: false
+      complete: false
     }
     setTask([...task, newTask]);
   }
 
+  const removeTask = () => {
+    const removal = task.filter(element => element.complete === false);
+    setTask(removal);
+  }
+
+  const changeComplete = (id) => {
+    const change = task.map((element) => {
+      if (element.id === id) {
+        element.complete = !element.complete;
+        return element;
+      }else{
+        return element;
+      }
+    })
+    setTask(change);
+   console.log(change);
+  }
+
   return(
     <div>
-      <TodoList task={task} />
+      <TodoList task={task} changeComplete={changeComplete} />
       <h2>Todo List</h2>
-      <TodoForm addTask={addTask}/>
+      <TodoForm addTask={addTask} removeTask={removeTask} change={changeComplete}/>
     </div>
   )
 }
