@@ -19,6 +19,7 @@
 }
 .complete {
   color: red;
+  text-decoration: line-through;
 }
 .list-item {
   font-size: 2rem;
