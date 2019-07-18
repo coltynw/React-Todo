@@ -15,8 +15,8 @@ function TodoForm(props) {
   }
 
   return (
-    <form onSubmit={sendTask}>
-      <input placeholder='Item to DO' value={formValue} onChange={(e) => setFormValue(e.target.value)} />
+    <form className={`form`} onSubmit={sendTask}>
+      <input className={`input`} placeholder='Item to DO' value={formValue} onChange={(e) => setFormValue(e.target.value)} />
       <button type='submit'>Add Todo</button>
       <button type='button' onClick={removeEvent}>Remove Todo</button>
     </form>

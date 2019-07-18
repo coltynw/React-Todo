@@ -54,9 +54,9 @@ function App() {
   }
 
   return(
-    <div>
+    <div className={`app-container`}>
+      <h2 className={`title`}>Todo List</h2>
       <TodoList task={task} changeComplete={changeComplete} />
-      <h2>Todo List</h2>
       <TodoForm addTask={addTask} removeTask={removeTask} change={changeComplete}/>
     </div>
   )
